@@ -1,0 +1,14 @@
+{
+    "window": {
+        "width": 1145,
+        "height": 857,
+        "left": 37,
+        "top": 316
+    },
+    "system": {
+        "gpu": [
+            "NVIDIA GeForce RTX 3070"
+        ],
+        "memory_GB": 15.865283966064453
+    }
+}
