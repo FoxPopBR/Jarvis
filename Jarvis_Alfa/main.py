@@ -1,9 +1,9 @@
 from kivy.app import App
 from Module import layout
-from Module import menu  # Adicione esta linha
 
 class MyApp(App):
     def build(self):
+        layout.load_window_settings()  # Carregar as configurações da janela primeiro
         return layout.create_main_layout()
 
     def on_stop(self):
