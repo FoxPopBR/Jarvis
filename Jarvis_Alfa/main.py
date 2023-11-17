@@ -1,13 +1,13 @@
 from kivy.app import App
-from Module import layout
+from Module import layout, config  # Certifique-se de que 'config' está sendo importado
 
 class MyApp(App):
     def build(self):
-        layout.load_window_settings()  # Carregar as configurações da janela primeiro
         return layout.create_main_layout()
 
     def on_stop(self):
-        layout.save_window_settings()
+        # Chamada corrigida para a função 'save_window_settings' no módulo 'config'
+        config.save_window_settings()
 
 if __name__ == '__main__':
     MyApp().run()
