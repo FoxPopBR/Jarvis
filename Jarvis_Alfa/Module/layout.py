@@ -98,6 +98,3 @@ def get_system_info():
     memory_info = psutil.virtual_memory().total / (1024 ** 3) # Convertendo para GB
     return {'gpu': gpu_info, 'memory_GB': memory_info}
 
-if __name__ == '__main__':
-    load_window_settings()
-    MyApp().run()
