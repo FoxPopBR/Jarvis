@@ -1,5 +1,6 @@
 from kivy.app import App
 from Module import layout
+from Module import menu  # Adicione esta linha
 
 class MyApp(App):
     def build(self):

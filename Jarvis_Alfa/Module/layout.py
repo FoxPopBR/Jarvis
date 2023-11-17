@@ -7,20 +7,37 @@ import os
 import GPUtil
 import psutil
 from . import menu  # Mudança para importação relativa
+from kivy.uix.widget import Widget 
 
 window_state_before_maximize = {'width': 1280, 'height': 720, 'left': 100, 'top': 100}
 previous_window_state = None
 
 def create_main_layout():
     """ Cria o layout principal da aplicação, centralizado na tela. """
-    load_window_settings()
+    load_window_settings()  # Carregue as configurações da janela primeiro
     main_layout = MainLayout()
     return main_layout
-
 class MainLayout(BoxLayout):
     def __init__(self, **kwargs):
         super(MainLayout, self).__init__(**kwargs)
-        self.add_widget(Button(text='Hello, Senhor Fox', size_hint=(1, 0.2)))
+        self.orientation = 'horizontal'  # Mantém a orientação horizontal
+
+        # Espaçadores para ajudar na centralização do botão
+        spacer_left = Widget(size_hint_x=1)
+        spacer_right = Widget(size_hint_x=1)
+
+        button = CenteredButton(
+            text='Hello, Senhor Fox',
+            size_hint=(None, None),  # Tamanho fixo
+            size=(200, 40),
+            pos_hint={'center_x': 0.5}  # Centraliza o botão horizontalmente
+        )
+
+        # Adiciona os espaçadores e o botão ao layout
+        self.add_widget(spacer_left)
+        self.add_widget(button)
+        self.add_widget(spacer_right)
+
         menu.show_menu()
 
 def load_window_settings():
@@ -80,3 +97,7 @@ def get_system_info():
     gpu_info = [gpu.name for gpu in gpus]
     memory_info = psutil.virtual_memory().total / (1024 ** 3) # Convertendo para GB
     return {'gpu': gpu_info, 'memory_GB': memory_info}
+
+if __name__ == '__main__':
+    load_window_settings()
+    MyApp().run()
