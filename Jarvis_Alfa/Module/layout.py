@@ -8,6 +8,7 @@ import psutil
 from . import menu
 from kivy.uix.widget import Widget
 from kivy.clock import Clock
+from .config import load_window_settings, save_window_settings
 
 window_state_before_maximize = {'width': 1280, 'height': 720, 'left': 100, 'top': 100}
 previous_window_state = None
