@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Seu Servidor Caseiro{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{% block header %}Bem-vindo ao Seu Servidor Caseiro{% endblock %}</h1>
+        </header>
+        <nav>
+            <!-- Se quiser adicionar uma barra de navegação, pode fazer aqui -->
+        </nav>
+        <section>
+            {% block content %}{% endblock %}
+        </section>
+        <footer>
+            <!-- Se quiser adicionar um rodapé, pode fazer aqui -->
+        </footer>
+    </div>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

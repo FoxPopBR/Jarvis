@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Opções do Arquivo - Seu Servidor Caseiro{% endblock %}
+
+{% block content %}
+   <h2>Opções do Arquivo</h2>
+   <p>Arquivo: {{ arquivo }}</p>
+   <p><a href="{{ url_for('baixar_arquivo', arquivo=arquivo) }}">Fazer Download</a></p>
+   <!-- Adicione mais opções conforme necessário -->
+{% endblock %}
